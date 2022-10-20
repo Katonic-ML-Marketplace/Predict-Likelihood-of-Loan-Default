@@ -21,7 +21,7 @@ st.set_page_config(
     initial_sidebar_state = 'auto'
 )
 
-st.sidebar.image('logo.png')
+st.sidebar.image('image/logo.png')
 st.sidebar.title('Predict Likelihood of Loan Default')
 st.sidebar.write('---')
 
@@ -33,7 +33,7 @@ This app predicts **if someone is going to default this may lead to intervention
 st.write('---')
 
 # Loads Dataset
-data_path = 'loan_default_data.csv'
+data_path = 'data/loan_default_data.csv'
 data_df = pd.read_csv(data_path, encoding = 'ISO-8859-1')
 st.write(data_df.head(20))
 
@@ -200,7 +200,7 @@ X = min_max_scaler.fit_transform(X)
 
 # to retrain
 agree = st.checkbox('Check to retrain the model')
-filename = 'finalized_model.sav'
+filename = 'model/finalized_model.sav'
 if agree:
     # Build Regression Model
     model = LinearRegression() 
