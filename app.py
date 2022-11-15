@@ -1,6 +1,4 @@
 import pickle
-import requests
-from io import BytesIO
 from PIL import Image
 
 import pandas as pd
@@ -11,8 +9,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LinearRegression
 
 
-response = requests.get(url='https://katonic.ai/favicon.ico')
-im = Image.open(BytesIO(response.content))
+im = Image.open('image/favicon.ico')
 
 st.set_page_config(
     page_title='Predict Likelihood of Loan Default App', 
